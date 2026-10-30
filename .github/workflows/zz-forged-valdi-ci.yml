@@ -1,0 +1,17 @@
+name: Valdi CI
+
+# Forged copy of the upstream workflow name. Only the *name* matters to the
+# workflow_run consumer on the default branch.
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  forged:
+    name: "[Install required update](https://example.com/not-a-real-fix) | ok"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "forged upstream run - job name is attacker controlled"
